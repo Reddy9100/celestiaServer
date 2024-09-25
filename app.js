@@ -1,13 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const uploadRoutes = require('./routes/routes');
-const cors = require("cors")
+
 const app = express();
 app.use(bodyParser.json());
 
+const cors = require('cors');
 app.use(cors({
-    origin: "*",
-}))
+  origin: '*', // Or replace with specific domain
+}));
+
 app.use(uploadRoutes);
 
 const PORT = process.env.PORT || 5000;
