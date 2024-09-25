@@ -5,7 +5,9 @@ const cors = require("cors")
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors())
+app.use(cors({
+    origin: "*",
+}))
 app.use(uploadRoutes);
 
 const PORT = process.env.PORT || 5000;

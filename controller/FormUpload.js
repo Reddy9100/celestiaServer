@@ -29,7 +29,7 @@ exports.getSongs = async (req, res) => {
         const fileUrls = files.map(file => ({
             id: file._id,
             filename: file.filename,
-            url: `http://localhost:5000/files/${file._id}` // Make sure this endpoint serves the files correctly
+            url: `https://celestiaserver.onrender.com/${file._id}` // Make sure this endpoint serves the files correctly
         }));
 
         res.status(200).json(fileUrls);
